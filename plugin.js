@@ -96,4 +96,11 @@ async function plugin(fastify, opts) {
   fastify.addHook('preHandler', hook)
 }
 
-module.exports = fp(plugin)
+module.exports = fp(plugin,
+  {
+    fastify: '>=1.0.0-rc.1',
+    decorators: {
+      request: ['session']
+    }
+  }
+)
