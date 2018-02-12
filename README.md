@@ -1,4 +1,5 @@
 
+
 # fastify-auth0
 
 *fastify-auth0* adds Auth0 authentication to [Fastify][fastify]-based apps.  This plugin assumes that you know a bit about OAuth 2, and Auth0.
@@ -85,7 +86,7 @@ At _minimum_ you need a `domain`, `client_id`, and `client_secret`.  You'll get 
 | client_id | *required* | `string` | The id of your Auth0 client | 
 | client_secret | *required* | `string` | Your client's secret |
 | scope |   | `string`/"profile openid email" | The scope of information about a user that you'd like back from Auth0 upon successful authentication |
-| appUrl |   | "http://localhost:3000" |   |
-| handlerPath |  | "/callback" |   |
+| appUrl |   | "http://localhost:3000" | *appUrl* and *handlerPath* are fairly important.  Together they produce the `redirect_uri` query string parameter in the redirection to Auth0. This is very useful in situations where your application is clustered or behind a load balancer or something, where you wouldn't necessarily want Auth0 redirecting back to a particular node of the cluster, for example. |
+| handlerPath |  | "/callback" | The path that Auth0 will redirect to once successfully authenticated with Auth0, see the note above about *appUrl*. |
 | success |   | `[async] function (credentials, request)` | A function that should be called when a user is successfully authenticated, this is for your purposes and has no effect on the plugin.  `credentials` is that which Auth0 returns. |
 | transformer |   | `[async] function (credentials, request)` | Very similar to `[async] function success(credentials, request)`, except that this function _can_ affect stuff.  In particular that which this function returns will become `request.session.credentials` in your routes. |
