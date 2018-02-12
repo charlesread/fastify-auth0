@@ -75,7 +75,7 @@ fastify.register(require('fastify-auth0'), options)
 
 <strong>TL;DR</strong>
 
-At _minimum_ you need a `domain`, `client_id`, and `client_secret`.  You'll get back, from Auth0 upon successful auth, the things requested in `scope`, all of that stuff will become `request.session.credentials` in routes.  After successful auth with Auth0 you'll be redirected to `handlerPath`, which does important stuff, it's the "callback URL" referenced a lot in documentation, which you need to [whitelist with Auth0](https://imgur.com/QEOIFUK) (which here is really just `appUrl || handlerPath`, this goes to Auth0 as the `redirect_uri` query string parameter during redirection to Auth0 for authentication).
+At _minimum_ you need a `domain`, `client_id`, and `client_secret`.  You'll get back, from Auth0 upon successful auth, the things requested in `scope`, all of that stuff will become `request.session.credentials` in routes.  After successful auth with Auth0 you'll be redirected to `handlerPath`, which does important stuff, it's the "callback URL" referenced a lot in documentation, which you need to [whitelist with Auth0](https://imgur.com/QEOIFUK) (which here is really just `appUrl + handlerPath`, this goes to Auth0 as the `redirect_uri` query string parameter during redirection to Auth0 for authentication).
 
 `options` itself is a simple object that allows the following keys:
 
