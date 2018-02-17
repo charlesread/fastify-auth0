@@ -38,6 +38,10 @@ const hookFactory = function (fastify, options) {
 
 async function plugin(fastify, opts) {
   debug('registering plugin')
+  if (!(opts.domain && opts.client_id && opts.client_secret)) {
+    debug('not all required options are present')
+    throw new Error('domain, client_id, and client_secret are all required options')
+  }
   let options = require(path.join(__dirname, 'lib', 'options'))(fastify, opts)
   fastify.route({
     method: 'GET',
