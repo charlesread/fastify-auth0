@@ -1,7 +1,7 @@
 {
   "name": "fastify-auth0",
   "version": "0.1.0",
-  "description": "A Fastify plugin providing Auth0 authentication",
+  "description": "Auth0 authentication for Fastify apps",
   "main": "plugin.js",
   "directories": {
     "test": "test"

@@ -1,10 +1,17 @@
-
-
 # fastify-auth0
 
 *fastify-auth0* adds Auth0 authentication to [Fastify][fastify]-based apps.  This plugin assumes that you know a bit about OAuth 2, and Auth0.
 
 [fastify]: https://fastify.io/
+
+<!-- toc -->
+
+- [Example](#example)
+- [Session, Cache, and Cookie](#session-cache-and-cookie)
+- [Usage and Options](#usage-and-options)
+  * [Options](#options)
+
+<!-- tocstop -->
 
 ## Example
 ```bash
