@@ -1,3 +1,4 @@
+
 # fastify-auth0
 
 *fastify-auth0* adds Auth0 authentication to [Fastify][fastify]-based apps.  This plugin assumes that you know a bit about OAuth 2, and Auth0.
@@ -97,3 +98,4 @@ At _minimum_ you need a `domain`, `client_id`, and `client_secret`.  You'll get 
 | handlerPath |  | "/callback" | The path that Auth0 will redirect to once successfully authenticated with Auth0, see the note above about *appUrl*. |
 | success |   | `[async] function (credentials, request)` | A function that should be called when a user is successfully authenticated, this is for your purposes and has no effect on the plugin.  `credentials` is that which Auth0 returns. |
 | transformer |   | `[async] function (credentials, request)` | Very similar to `[async] function success(credentials, request)`, except that this function _can_ affect stuff.  In particular that which this function returns will become `request.session.credentials` in your routes. |
+| getSession |   | `async function (request) { return request.session }` | `fastify-auth0` needs to set and retrieve session data, this function specifies how the plugin does gets the session. |
