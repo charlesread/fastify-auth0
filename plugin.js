@@ -102,7 +102,7 @@ async function plugin(fastify, opts) {
 
 module.exports = fp(plugin,
   {
-    fastify: '>=1.0.0-rc.1',
+    fastify: '>=1.0.0',
     decorators: {
       request: ['session']
     }
