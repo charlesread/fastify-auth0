@@ -1,3 +1,4 @@
+[![NPM downloads](https://img.shields.io/npm/dm/fastify-auth0.svg?style=flat)](https://www.npmjs.com/package/fastify-auth0)
 
 # fastify-auth0
 
